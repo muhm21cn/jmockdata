@@ -5,6 +5,9 @@ import com.github.jsonzou.jmockdata.Mocker;
 import com.github.jsonzou.jmockdata.util.RandomUtils;
 import com.github.jsonzou.jmockdata.util.StringUtils;
 
+import java.util.Collection;
+import java.util.List;
+
 /**
  * 模拟String对象
  */
@@ -17,6 +20,11 @@ public class StringMocker implements Mocker<String> {
      */
     if(StringUtils.isNotEmpty(mockConfig.stringRegex())){
       return RandomUtils.nextStringFromRegex(mockConfig.stringRegex());
+    }
+
+    List pickArray = mockConfig.pickArray();
+    if (pickArray != null && !pickArray.isEmpty()){
+      return pickArray.get(RandomUtils.nextInt(0, pickArray.size())).toString();
     }
 
     int size = RandomUtils.nextSize(mockConfig.sizeRange()[0], mockConfig.sizeRange()[1]);

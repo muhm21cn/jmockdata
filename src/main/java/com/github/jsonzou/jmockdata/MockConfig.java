@@ -401,6 +401,11 @@ public class MockConfig {
     return this;
   }
 
+  public MockConfig pickArray(List array) {
+    GLOBAL_DATA_CONFIG.pickArray(array);
+    return this;
+  }
+
   /**
    * 根据正则表达是模拟数字类型，
    * 全局慎用，小数、整数、短整数等都会使用此表达式生成，有可能会超范围，
@@ -480,6 +485,10 @@ public class MockConfig {
 
   public String[] stringSeed() {
     return GLOBAL_DATA_CONFIG.stringSeed();
+  }
+
+  public List pickArray() {
+    return GLOBAL_DATA_CONFIG.pickArray();
   }
 
   public char[] charSeed() {

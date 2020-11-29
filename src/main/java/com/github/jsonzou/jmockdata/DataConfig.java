@@ -1,5 +1,7 @@
 package com.github.jsonzou.jmockdata;
 
+import java.util.List;
+
 /**
  * @Author: jsonzou
  * @Date: 2018/10/29 13:24
@@ -30,6 +32,7 @@ public class DataConfig {
 
     private String numberRegex = null;
     private String stringRegex = null;
+    private List pickArray = null;
 
     public DataConfig(MockConfig config) {
         this.config = config;
@@ -172,6 +175,9 @@ public class DataConfig {
         return this;
     }
 
+    public DataConfig pickArray(List array) {
+        this.pickArray = array;
+        return this;}
 
     public byte[] byteRange() {
         return this.byteRange;
@@ -226,5 +232,10 @@ public class DataConfig {
     public String stringRegex() {
        return this.stringRegex ;
     }
+    public List pickArray() {
+        return this.pickArray ;
+    }
+
+
 
 }

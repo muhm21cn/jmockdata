@@ -28,6 +28,45 @@
     </license>
   </licenses>
 
+  <repositories>
+    <!--<repository>-->
+    <!--<id>oss</id>-->
+    <!--<name>OSS Staging Repository</name>-->
+    <!--<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>-->
+    <!--<releases>-->
+    <!--<enabled>true</enabled>-->
+    <!--</releases>-->
+    <!--<snapshots>-->
+    <!--<enabled>true</enabled>-->
+    <!--</snapshots>-->
+    <!--</repository>-->
+    <repository>
+      <id>alimaven</id>
+      <name>aliyun maven</name>
+      <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+
+    <repository>
+      <id>jitpack</id>
+      <name>jitpack maven</name>
+      <url>https://jitpack.io</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+
+
+  </repositories>
+
   <developers>
     <developer>
       <name>jsonzou</name>
@@ -65,6 +104,11 @@
       <artifactId>lombok</artifactId>
       <version>1.16.20</version>
       <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.github.ghacupha</groupId>
+      <artifactId>faker</artifactId>
+      <version>1.2.6</version>
     </dependency>
     <dependency>
       <groupId>junit</groupId>
@@ -168,20 +212,20 @@
               </execution>
             </executions>
           </plugin>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-gpg-plugin</artifactId>
-            <version>1.5</version>
-            <executions>
-              <execution>
-                <id>sign-artifacts</id>
-                <phase>verify</phase>
-                <goals>
-                  <goal>sign</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
+          <!--<plugin>-->
+            <!--<groupId>org.apache.maven.plugins</groupId>-->
+            <!--<artifactId>maven-gpg-plugin</artifactId>-->
+            <!--<version>1.5</version>-->
+            <!--<executions>-->
+              <!--<execution>-->
+                <!--<id>sign-artifacts</id>-->
+                <!--<phase>verify</phase>-->
+                <!--<goals>-->
+                  <!--<goal>sign</goal>-->
+                <!--</goals>-->
+              <!--</execution>-->
+            <!--</executions>-->
+          <!--</plugin>-->
         </plugins>
       </build>
     </profile>
